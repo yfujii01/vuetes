@@ -1,5 +1,42 @@
 # vuetes
 
+# 作成から公開まで
+
+$ vue create webpack vuetes
+
+全てENTER
+
+$ cd vuetes
+
+config/index.js修正
+
+build内を修正する
+---
+assetsPublicPath: '/',
+↓
+assetsPublicPath: '',
+---
+
+$ npm install gh-pages --save-dev
+
+package.jsonを修正
+---
+"scripts": {
+    "deploy": "gh-pages -d dist"
+  }
+---
+
+$ git add -A
+
+$ git commit -m "commit"
+
+$ git remote add origin ◯◯◯◯◯◯◯◯◯◯
+
+$ git push master head
+
+$ npm run deploy
+
+
 > A Vue.js project
 
 ## Build Setup
