@@ -2,40 +2,67 @@
 
 # 作成から公開まで
 
+- プロジェクトを作成する
+
+  全てENTERでOK
+```
 $ vue create webpack vuetes
 
-全てENTER
-
 $ cd vuetes
+```
 
-config/index.js修正
+- config/index.js 修正
 
-build内を修正する
----
-assetsPublicPath: '/',
+  build内のassetsPublicPathを修正する
+```
+build: {
+  〜
+  assetsPublicPath: '/',
+  〜
 ↓
-assetsPublicPath: '',
----
+build: {
+  〜
+  assetsPublicPath: '',
+  〜
+```
 
+- github pageへのデプロイを簡単にするプラグインを追加
+
+```
 $ npm install gh-pages --save-dev
+```
 
-package.jsonを修正
----
+- package.jsonを修正
+
+  scriptsにdeployを追加する
+
+```
 "scripts": {
+    〜,
     "deploy": "gh-pages -d dist"
-  }
----
+}
+```
 
+- コミットする
+
+```
+$ git init
 $ git add -A
-
 $ git commit -m "commit"
+```
 
+- githubでリポジトリを作ってpush
+
+```
 $ git remote add origin ◯◯◯◯◯◯◯◯◯◯
-
 $ git push master head
+```
 
+- github pageにデプロイする
+
+```
 $ npm run deploy
-
+```
 
 > A Vue.js project
 
